@@ -55,8 +55,14 @@
 
 ## 4. Phân tích 50 case khó
 
-*Model nào tụt nhiều nhất, ở nhóm case nào? Nêu 2 case cụ thể và cơ chế khiến model sai.*\n
-So sánh "F1 50 case khó" với "F1 test thường". Model BoW + LogReg tụt nhiều nhất. Vì trên test thường model có thể nhận diện các từ khoá quen thuộc của tin spam. Bộ stress test lại đưa né từ khoá, viết như hội thoại và tin hợp lệ nên dấu hiệu kém tin cậy hơn.
+So sánh "F1 50 case khó" với "F1 test thường". Model BoW + LogReg tụt nhiều nhất. Vì trên test thường model có thể nhận diện các từ khoá quen thuộc của tin spam. Bộ stress test lại đưa né từ khoá, viết như hội thoại và tin hợp lệ nên dấu hiệu kém tin cậy hơn. <br>
+**Ví dụ**
+1. **Case #19 — Spam giọng tự nhiên**  
+   **Nhãn thật:** `spam`. Tin nhắn mở đầu bằng “Hey sweetie, missed you lately”, nghe như lời nhắn của người quen. Các cụm “a little something special” và “just reply” gợi ý rằng người gửi đang khơi tò mò để dụ người nhận trả lời. Nếu BoW dự đoán `ham`, một lý do có thể là các từ như “missed”, “you” và “tonight” cũng thường xuất hiện trong tin nhắn cá nhân, còn tín hiệu spam nằm ở cách cả câu dẫn dắt người đọc trả lời.
+
+2. **Case #26 — Thao túng / lừa đảo**  
+   **Nhãn thật:** `spam`. Tin nhắn mượn tên Netflix và dùng cụm “your payment was declined” để trông giống thông báo thanh toán không thành công thật. Nó thúc người nhận cập nhật thông tin thanh toán “within 12 hours”, tạo áp lực phải hành động nhanh. Nếu model dự đoán `ham`, có thể nó nhận ra mẫu thông báo thanh toán quen thuộc nhưng bỏ qua sự kết hợp giữa yêu cầu cập nhật thông tin và thời hạn gấp.
+
 
 ## 5. Thử thách cá nhân
 
