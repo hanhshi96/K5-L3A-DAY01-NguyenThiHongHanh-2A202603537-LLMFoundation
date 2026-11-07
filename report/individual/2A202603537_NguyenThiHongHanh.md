@@ -10,9 +10,9 @@
 
 | Tệp | Có? |
 | --- | --- |
-| [`day01_lab.ipynb`](day01_lab.ipynb) — notebook đã chạy, còn output | ☐ |
+| [`day01_lab.ipynb`](day01_lab.ipynb) — notebook đã chạy, còn output | [x] |
 | [`lab1_report.json`](lab1_report.json) — do ô "Báo cáo cuối" sinh ra | ☐ |
-| [`hand_calc.jpg`](hand_calc.jpg) — ảnh tính tay có các bước | ☐ |
+| [`hand_calc.jpg`](hand_calc.jpg) — ảnh tính tay có các bước | [x] |
 
 ## 2. Kết quả chính
 
@@ -55,7 +55,7 @@
 
 ## 4. Phân tích 50 case khó
 
-*Model nào tụt nhiều nhất, ở nhóm case nào? Nêu 2 case cụ thể và cơ chế khiến model sai.*
+*Model nào tụt nhiều nhất, ở nhóm case nào? Nêu 2 case cụ thể và cơ chế khiến model sai.*\n
 So sánh "F1 50 case khó" với "F1 test thường". Model BoW + LogReg tụt nhiều nhất. Vì trên test thường model có thể nhận diện các từ khoá quen thuộc của tin spam. Bộ stress test lại đưa né từ khoá, viết như hội thoại và tin hợp lệ nên dấu hiệu kém tin cậy hơn.
 
 ## 5. Thử thách cá nhân
